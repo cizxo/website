@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CIZXO</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+
+    background: linear-gradient(-45deg, #000000, #120018, #2a0038, #000000);
+    background-size: 400% 400%;
+    animation: bgSwish 12s ease-in-out infinite;
+}
+
+@keyframes bgSwish {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+}
+
+/* TEXT */
+h1 {
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,0.7),
+        0 0 12px rgba(180, 100, 255, 0.5),
+        0 0 30px rgba(120, 40, 255, 0.3);
+
+    animation: float 4s ease-in-out infinite;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 3px;
+
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0px); }
+}
+
+/* PLAY BUTTON */
+button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Orbitron', sans-serif;
+
+    color: white;
+    background: rgba(120, 40, 255, 0.2);
+    border: 1px solid rgba(180, 100, 255, 0.5);
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    box-shadow: 0 0 10px rgba(120, 40, 255, 0.3);
+}
+
+button:hover {
+    background: rgba(120, 40, 255, 0.4);
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>CIZXO</h1>
+    <p>chill and listen.</p>
+
+    <button onclick="document.getElementById('music').play()">
+        ▶ Play Music
+    </button>
+</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
